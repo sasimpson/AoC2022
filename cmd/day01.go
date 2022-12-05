@@ -6,11 +6,11 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	"github.com/spf13/cobra"
-	"log"
 	"os"
 	"sort"
 	"strconv"
+
+	"github.com/spf13/cobra"
 )
 
 // day01Cmd represents the day01 command
@@ -41,7 +41,7 @@ func init() {
 }
 
 var day01 = func(cmd *cobra.Command, args []string) error {
-	fmt.Println("day 1 part 1")
+	fmt.Println("day 1")
 
 	var foodList []int
 
@@ -72,7 +72,7 @@ var day01 = func(cmd *cobra.Command, args []string) error {
 		foodSum += foodCount
 	}
 	if err := s.Err(); err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	fmt.Println("max calories:", maxFoodSum)
